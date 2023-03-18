@@ -1,15 +1,20 @@
 import React from 'react';
 import './App.scss';
+import { HashRouter as Router} from 'react-router-dom';
 
-import Header from '../header/Header';
-import Footer from '../Footer/Footer';
+import Header from '../subComponents/header/Header';
+import Footer from '../subComponents/Footer/Footer';
+import Routes from '../Routes/Routes';
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <Footer />
-    </div>
+    <Router>
+      <div className="App">
+        <Header />
+        <Routes />
+        <Footer />
+      </div>
+    </Router>
   );
 }
 

@@ -1,0 +1,51 @@
+@import '../../style/variables.scss';
+
+.result{
+    @extend %text-question;
+    &__title{
+        text-align: center;
+        margin: 10vh auto;
+        background-color: $celadon;
+        border-radius: 20px;
+        width: 45%;
+        height: 10vh;
+        padding: 3vh 3vw;
+    }
+    &__false{
+        margin: 10vh auto;
+        @extend %text-question;
+        background-color: $celadon;
+        border-radius: 20px;
+        width: 45%;
+        height: 30%;
+        padding: 3vh 3vw;
+        &_title{
+            font-weight: 600;
+        }
+    }
+    &__btn{
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 10vw;
+        height: 7vh;
+        font-weight: 600;
+        font-size: 32px;
+        line-height: 32px;
+        color: $darkmouth-green;
+        background-color: $dark-celadon;
+        border-radius: 20px;
+        transition: color 400ms linear, background-color 400ms linear;
+        &:hover{
+            color: $dark-mint;  
+            background-color: $celadon;
+        }
+    }
+    @media (max-width: 1024px) {
+    }
+    @media (max-width: 568px) {
+    }
+    @media (max-width: 380px) {
+    }
+}

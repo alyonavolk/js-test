@@ -1,0 +1,91 @@
+@import '../../style/variables.scss';
+
+.definitionQuestion{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 80vw;
+    gap: 4vw;
+    margin: 10vh auto;
+    &_left{
+        @extend %text-question;
+        background-color: $celadon;
+        border-radius: 20px;
+        width: 45%;
+        height: 40vh;
+        padding: 5vh 5vw;
+        display: flex;
+        align-items: center;
+    }
+    &_right{
+        @extend %text-question;
+        line-height: 36px;
+        background-color: $celadon;
+        border-radius: 20px;
+        width: 45%;
+        height: 40vh;
+        padding: 4vh 3vw;
+        display: flex;
+        flex-direction: column;
+        gap: 20%;
+        input {
+            @extend %text-question;
+            color: $brunswick-green;
+            width: 12vw;
+            padding: 10px;
+            margin: 10px;
+            background: inherit;
+            border: 3px dashed $sea-green;
+            background-color: $nyanza;
+            border-radius: 20px;
+            transition: box-shadow 0.3s linear, background-color 0.3s linear;
+            
+            &::placeholder{
+                color: $dark-mint;
+            }
+            &:focus, &:hover{
+                border: 3px dashed $dark-mint;
+                background-color: $dark-celadon;
+                outline: none;
+                // box-shadow: 0px 5px 7px -5px $dark-text;
+            }
+        }
+    }
+
+    @media (max-width: 1024px) {
+        flex-direction: column; 
+        &_left{
+            width: 80%;
+            height: 12vh;
+        }
+        &_right{
+            width: 80%;
+            height: 30vh;
+            gap: 5vh;
+        }
+    }
+    @media (max-width: 568px) {
+        &_left{
+            width: 90%;
+        }
+        &_right{
+            width: 90%;
+            input {
+                width: 50vw;
+            }
+        }
+    }
+    @media (max-width: 380px) {
+        &_left{
+            width: 95%;
+        }
+        &_right{
+            width: 95%;
+            height: 37vh;
+            input {
+                width: 60vw;
+            }
+        }
+    }
+}

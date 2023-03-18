@@ -1,0 +1,17 @@
+@import '../../../style/variables.scss';
+
+.pageTitle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+    color: $darkmouth-green;
+    @extend %pageTitle;
+    &__link{
+        font-size: 50px;
+        transition: color 400ms linear;
+        &:hover{
+            color: $dark-celadon;
+        }
+    }
+}

@@ -1,10 +1,10 @@
 import * as React from 'react';
 import './Header.scss';
 
-interface  HeaderProps {
+interface IHeaderProps {
 }
 
-const Header: React.FunctionComponent< HeaderProps> = (props) => {
+const Header: React.FunctionComponent<IHeaderProps> = (props) => {
   return (
     <div className='header'>
         <div className='header__name'>
@@ -12,7 +12,7 @@ const Header: React.FunctionComponent< HeaderProps> = (props) => {
         </div>
         <ul className='header__info'>
             <li>
-                ул. Ворошилова, 12, Челябинск, Челябинская обл.
+                ул. Ворошилова, 12, Челябинск, Чел. обл.
             </li>
             <li>
                 +7999-9999-99-99

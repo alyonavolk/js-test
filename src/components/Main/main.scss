@@ -1,0 +1,75 @@
+@import '../../style/variables.scss';
+
+.main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 15vh;
+    margin: 15vh auto 10vh;
+    &__btn{
+        padding: 0 10px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 20vw;
+        height: 10vh;
+        font-weight: 600;
+        font-size: 50px;
+        line-height: 46px;
+        color: $darkmouth-green;
+        background-color: $dark-celadon;
+        border-radius: 20px;
+        transition: color 400ms linear, background-color 400ms linear;
+        &:hover{
+            color: $dark-mint;  
+            background-color: $celadon;
+        }
+    }
+    &__descr{
+        font-weight: 400; //700
+        font-size: 28px;
+        line-height: 38px;
+        max-width: 55vw;
+        text-align: center;
+        color: $brunswick-green;
+        span {
+            font-weight: 500; 
+            color: $sea-green;
+        }
+        // @extend %link;
+    }
+
+    @media (max-width: 1024px) {
+        &__btn{
+            width: 30vw;
+            height: 8vh;
+            font-size: 46px;
+            line-height: 46px;
+        }
+    }
+    @media (max-width: 568px) {
+        margin: 5vh auto 5vh;
+        gap: 10vh;
+        &__descr{
+            max-width: 80vw;
+        }
+        &__btn{
+            width: 50vw;
+            height: 7vh;
+            font-size: 42px;
+            line-height: 36px;
+        }
+    }
+    @media (max-width: 380px) {
+        margin: 3vh auto 5vh;
+        gap: 10vh;
+        &__btn{
+            width: 50vw;
+            height: 7vh;
+            font-size: 36px;
+            line-height: 28px;
+        }
+    }
+}

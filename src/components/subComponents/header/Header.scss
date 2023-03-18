@@ -1,0 +1,52 @@
+@import '../../../style/variables.scss';
+
+.header{
+    position: fixed;
+    width: 100vw;
+    background-color: $back;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 30px 50px 50px;
+    &__name{
+        width: 50%;
+        @extend %h2;
+    }
+    &__info{
+        width: 50%;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: right;
+        text-align: right;
+        li{
+            width: 50%;
+        }
+        @extend %link;
+    }
+
+    @media (max-width: 1024px) {
+        flex-direction: column;
+        gap: 20px;
+        &__info{
+            width: 100%;
+            justify-content: space-between;
+            li{
+                width: 50%;
+            }
+        }
+    }
+    @media (max-width: 568px) {
+        &__name{
+            width: 80%;
+        }
+        &__info{
+            flex-direction: column;
+            gap: 20px;
+            li{
+                width: 100%;
+            }
+        }
+    }
+}

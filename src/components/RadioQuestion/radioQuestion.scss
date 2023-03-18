@@ -1,0 +1,68 @@
+@import '../../style/variables.scss';
+
+.radioQuestion{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 80vw;
+    gap: 4vw;
+    margin: 10vh auto;
+    &_left{
+        @extend %text-question;
+        background-color: $celadon;
+        border-radius: 20px;
+        width: 45%;
+        height: 40vh;
+        display: flex;
+        align-items: center;
+        padding: 5vh 5vw;
+    }
+    &_right{
+        @extend %text-question;
+        background-color: $celadon;
+        border-radius: 20px;
+        width: 45%;
+        height: 40vh;
+        padding: 4vh 3vw;
+        display: flex;
+        flex-direction: column;
+        gap: 10%;
+    }
+    &__btn{
+        display: flex;
+        gap: 10px;
+    }
+    @media (max-width: 1024px) {
+        flex-direction: column; 
+        &_left{
+            width: 80%;
+            height: 15vh;
+        }
+        &_right{
+            width: 80%;
+            height: 35vh;
+            gap: 5vh;
+        }
+    }
+    @media (max-width: 568px) {
+        &_left{
+            width: 90%;
+            height: 15vh;
+        }
+        &_right{
+            width: 90%;
+            height: 40vh;
+            gap: 4vh;
+        }
+    }
+    @media (max-width: 380px) {
+        &_left{
+            width: 95%;
+        }
+        &_right{
+            width: 95%;
+            height: 43vh;
+        }
+    }
+}
