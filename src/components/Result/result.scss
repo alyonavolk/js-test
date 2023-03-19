@@ -2,25 +2,37 @@
 
 .result{
     @extend %text-question;
+    &__content{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 50px;
+        margin-bottom: 50px;
+    }
     &__title{
         text-align: center;
-        margin: 10vh auto;
         background-color: $celadon;
         border-radius: 20px;
         width: 45%;
-        height: 10vh;
-        padding: 3vh 3vw;
+        max-width: 600px;
+        height: 13vh;
+        padding: 4vh 3vw;
     }
     &__false{
-        margin: 10vh auto;
         @extend %text-question;
         background-color: $celadon;
         border-radius: 20px;
         width: 45%;
+        max-width: 600px;
         height: 30%;
         padding: 3vh 3vw;
         &_title{
             font-weight: 600;
+            padding-bottom: 20px;
+        }
+        p {
+            padding-bottom: 5px;
         }
     }
     &__btn{
@@ -28,8 +40,9 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 10vw;
-        height: 7vh;
+        max-width: 180px;
+        padding: 15px;
+        max-height: 100px;
         font-weight: 600;
         font-size: 32px;
         line-height: 32px;
@@ -43,9 +56,34 @@
         }
     }
     @media (max-width: 1024px) {
+        &__content{
+            flex-direction: column;
+        }
+        &__title, &__false{
+            min-width: 400px;
+        }
+        &__btn{
+            max-width: 160px;
+            font-size: 28px;
+        }
     }
     @media (max-width: 568px) {
+        &__btn{
+            max-width: 140px;
+            font-size: 24px;
+        }
+        &__title, &__false{
+            min-width: 250px;
+        }
     }
     @media (max-width: 380px) {
+        &__btn{
+            max-width: 120px;
+            font-size: 20px;
+            padding: 10px 15px;
+        }
+    }
+    @media (max-height: 700px) {
+        padding-bottom: 15%;
     }
 }

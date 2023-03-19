@@ -16,18 +16,32 @@ $back: #edfaef;
     font-weight: 800;
     font-size: 42px;
     line-height: 42px;
+    @media (max-width: 568px) {
+        font-size: 32px;
+    }
 }
 
 %pageTitle{
-    font-weight: 6 800; //700
+    font-weight: 600; //700
     font-size: 32px;
     line-height: 23px;
+    @media (max-width: 568px) {
+        font-size: 25px;
+    }
 }
 
 %link {
     font-weight: 500; //700
     font-size: 24px;
     line-height: 23px;
+    @media (max-width: 568px) {
+        font-size: 21px;
+        line-height: 18px;
+    }
+    
+    @media (max-width: 380px) {
+        font-size: 18px;
+    }
 }
 
 %link-order {
@@ -39,7 +53,11 @@ $back: #edfaef;
 %text-question{
     font-weight: 400; //700
     font-size: 24px;
-    line-height: 26px;
+    line-height: 30px;
+    @media (max-width: 568px) {
+        font-size: 18px;
+        line-height: 18px;
+    }
 }
 
 %table-title{
@@ -60,16 +78,3 @@ $back: #edfaef;
     line-height: 30px;
 }
 
-%modalHeader{
-    position: relative;
-    h3 {
-        @extend %link-order;
-        text-align: center;
-    }
-    button {
-        position: absolute;
-        margin: 0;
-        top: 0;
-        right: 10px;
-    }
-}

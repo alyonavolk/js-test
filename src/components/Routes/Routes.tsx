@@ -40,9 +40,9 @@ const Routes: React.FC<IRoutesProps> = (props) => {
                         left={false} />
                         <TextBoxQuestion 
                         title='Запишите следующую конструкцию на JavaScript, используя тернарный оператор «?»' 
-                        condition={`if (a + b < 4)  { \n
-                            ㅤalert('Мало') ;} \n
-                            else { \n
+                        condition={`if (a + b < 4)  { 
+                            ㅤalert('Мало') ;} 
+                            else { 
                             ㅤalert('Много');}
                             `}
                         placeholder='(a...'
@@ -90,7 +90,7 @@ const Routes: React.FC<IRoutesProps> = (props) => {
                         back={ROUTES.question4} forward={ROUTES.question6}/>
                         <TextBoxQuestion 
                         title='Чему будет равна переменная rez, после выполнения следующего кода?' 
-                        condition={`let rez = 0; \n
+                        condition={`let rez = 0; 
                             for (let i = 0; i < 3; i++) { 
                                 ㅤrez += i;
                             }
@@ -103,7 +103,7 @@ const Routes: React.FC<IRoutesProps> = (props) => {
                     <div className='routes'>
                         <PageTitle title='Вопрос 6' 
                         back={ROUTES.question5} forward={ROUTES.question7}/>
-                        <ChekBoxQuestion title={`Работа со строками в JavaScript. Как можно получить символ «о» из следующей переменной \n\nㅤlet str = \`Hello\`;? `}
+                        <ChekBoxQuestion title={`Работа со строками в JavaScript. Как можно получить символ «о» из следующей переменной? \nㅤㅤlet str = \`Hello\`; `}
                         answer1='alert ( str[str.length - 1] );' changeAnswer1={() => console.log()}
                         answer2='alert ( str.at(-1) );' changeAnswer2={() => console.log()}
                         answer3='alert ( str[4] );' changeAnswer3={() => console.log()}

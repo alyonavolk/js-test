@@ -13,15 +13,15 @@
         background-color: $celadon;
         border-radius: 20px;
         width: 45%;
-        height: 40vh;
-        padding: 5vh 5vw;
+        height: 380px;
+        padding: 30px;
     }
     &_right{
         @extend %text-question;
         background-color: $celadon;
         border-radius: 20px;
         width: 45%;
-        height: 40vh;
+        height: 380px;
         padding: 4vh 3vw;
         display: flex;
         flex-direction: column;
@@ -51,24 +51,46 @@
     &__code{
         padding: 3vh 3vw;
         white-space: pre-line;
+        line-height: 50px;
     }
-
+    @media (max-width: 1300px) {
+        &__code{
+            padding: 2vh 2vw;
+            line-height: 40px;
+        }
+    }
     @media (max-width: 1024px) {
         flex-direction: column; 
         &_left{
             width: 80%;
-            height: 28vh;
+            height: 310px;
         }
         &_right{
             width: 80%;
-            height: 25vh;
+            height: 200px;
             gap: 5vh;
+        }
+    }
+    @media (max-width: 780px) {
+        &__code{
+            padding: 1vh 2vw;
+            line-height: 35px;
+        }
+        &_left{
+            width: 80%;
+        }
+        &_right{
+            width: 80%;
+            gap: 5vh;
+            input {
+                width: 40vw;
+            }
         }
     }
     @media (max-width: 568px) {
         &_left{
             width: 90%;
-            height: 30vh;
+            height: 250px;
         }
         &_right{
             width: 90%;
@@ -80,11 +102,10 @@
     @media (max-width: 380px) {
         &_left{
             width: 95%;
-            height: 35vh;
+            height: 280px;
         }
         &_right{
             width: 95%;
-            height: 20vh;
             input {
                 width: 65vw;
             }

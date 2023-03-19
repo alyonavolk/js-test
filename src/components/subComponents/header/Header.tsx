@@ -15,7 +15,7 @@ const Header: React.FunctionComponent<IHeaderProps> = (props) => {
                 ул. Ворошилова, 12, Челябинск, Чел. обл.
             </li>
             <li>
-                +7999-9999-99-99
+                +7 (999) 999-99-99
             </li>
         </ul>
     </div>

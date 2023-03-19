@@ -13,7 +13,7 @@
         background-color: $celadon;
         border-radius: 20px;
         width: 45%;
-        height: 40vh;
+        height: 380px;
         display: flex;
         align-items: center;
         padding: 5vh 5vw;
@@ -24,11 +24,11 @@
         background-color: $celadon;
         border-radius: 20px;
         width: 45%;
-        height: 40vh;
-        padding: 4vh 3vw;
+        height: 380px;
+        padding: 30px;
         display: flex;
         flex-direction: column;
-        gap: 6%;
+        gap: 10px;
         p {
             padding-bottom: 10px;
         }
@@ -36,36 +36,94 @@
     &__btn{
         display: flex;
         gap: 10px;
+        input[type=checkbox] {
+            display: none;
+        }
+        label {
+            display: inline-block;
+            cursor: pointer;
+            position: relative;
+            padding-left: 25px;
+            user-select: none;
+            padding-bottom: 8px;
+        }
+        label:before {
+            content: "";
+            width: 17px;
+            height: 18px;
+            position: absolute;
+            left: 0;
+            bottom: 40%;
+            background-color: $mint;
+            border-radius: 10%;
+        }
+
+        input[type=checkbox]:checked + label:after {
+            content: "";
+            position: absolute;
+            left: 2px;
+            top: 7px;
+            width: 10px;
+            height: 5px;
+            border-radius: 1px;
+            border-left: 4px solid $brunswick-green;
+            border-bottom: 4px solid $brunswick-green;
+            -webkit-transform: rotate(-45deg);
+            -moz-transform: rotate(-45deg);
+            -o-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+
+        }
+         
+        /* Checked */
+        input[type=checkbox]:checked + label:before {
+            background-color: $sea-green;
+        }
+         
+        /* Hover */
+        label:hover:before {
+            background-color: $dark-mint;
+        }
+         
+        /* Disabled */
+        input[type=checkbox]:disabled + label:before {
+            filter: grayscale(100%);
+        }
     }
     @media (max-width: 1024px) {
         flex-direction: column; 
         &_left{
             width: 80%;
-            height: 15vh;
+            height: 180px;
         }
         &_right{
             width: 80%;
-            height: 36vh;
-            gap: 3vh;
+            height: 320px;
+        }
+    }
+    @media (max-width: 780px) {
+        &_right{
+            height: 340px;
         }
     }
     @media (max-width: 568px) {
         &_left{
             width: 90%;
-            height: 40vh;
+            height: 130px;
         }
         &_right{
             width: 90%;
+            height: 250px;
         }
     }
     @media (max-width: 380px) {
         &_left{
             width: 95%;
-            height: 20vh;
         }
         &_right{
             width: 95%;
-            height: 37vh;
+            height: 280px;
         }
     }
 }

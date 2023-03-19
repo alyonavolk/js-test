@@ -8,13 +8,14 @@
     gap: 15vh;
     margin: 15vh auto 10vh;
     &__btn{
-        padding: 0 10px;
         text-align: center;
         display: flex;
         align-items: center;
         justify-content: center;
         width: 20vw;
-        height: 10vh;
+        line-height: 46px;
+        padding: 20px 10px;
+        max-height: 100px;
         font-weight: 600;
         font-size: 50px;
         line-height: 46px;
@@ -43,10 +44,20 @@
 
     @media (max-width: 1024px) {
         &__btn{
-            width: 30vw;
-            height: 8vh;
-            font-size: 46px;
+            width: 35vw;
+            font-size: 40px;
             line-height: 46px;
+            padding: 10px 5px;
+            max-height: 100px;
+        }
+    }
+    @media (max-width: 780px) {
+        &__btn{
+            width: 30vw;
+            font-size: 38px;
+            line-height: 28px;
+            padding: 30px 5px;
+            max-height: 100px;
         }
     }
     @media (max-width: 568px) {
@@ -54,21 +65,24 @@
         gap: 10vh;
         &__descr{
             max-width: 80vw;
+            font-size: 24px;
         }
         &__btn{
             width: 50vw;
-            height: 7vh;
-            font-size: 42px;
-            line-height: 36px;
+            font-size: 32px;
+            line-height: 34px;
+            padding: 10px 5px;
+            max-height: 80px;
         }
     }
     @media (max-width: 380px) {
         margin: 3vh auto 5vh;
         gap: 10vh;
         &__btn{
-            width: 50vw;
-            height: 7vh;
-            font-size: 36px;
+            padding: 10px 5px;
+            width: 52vw;
+            max-height: 70px;
+            font-size: 28px;
             line-height: 28px;
         }
     }

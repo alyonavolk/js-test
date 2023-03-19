@@ -4,7 +4,16 @@
     position: fixed;
     bottom: 0;
     width: 100%;
-    padding: 50px;
+    padding: 30px;
     @extend %link;
+    @media (max-width: 1024px) {
+        padding: 20px;
+    }
     background-color: $back;
+    @media (max-width: 568px) {
+        padding: 20px;
+    }
+    @media (max-height: 700px) {
+        padding: 20px;
+    }
 }

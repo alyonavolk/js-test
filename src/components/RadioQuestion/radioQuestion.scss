@@ -13,7 +13,7 @@
         background-color: $celadon;
         border-radius: 20px;
         width: 45%;
-        height: 40vh;
+        height: 380px;
         display: flex;
         align-items: center;
         padding: 5vh 5vw;
@@ -23,37 +23,85 @@
         background-color: $celadon;
         border-radius: 20px;
         width: 45%;
-        height: 40vh;
-        padding: 4vh 3vw;
+        height: 380px;
+        padding: 30px;
         display: flex;
         flex-direction: column;
-        gap: 10%;
+        gap: 10px;
     }
     &__btn{
-        display: flex;
-        gap: 10px;
+        input[type=radio] {
+            display: none;
+        }
+        label {
+            display: inline-block;
+            cursor: pointer;
+            position: relative;
+            padding-left: 25px;
+            user-select: none;
+            padding-bottom: 8px;
+        }
+        label:before {
+            content: "";
+            width: 17px;
+            height: 18px;
+            position: absolute;
+            left: 0;
+            bottom: 40%;
+            background-color: $mint;
+            border-radius: 100%;
+        }
+         
+        /* Checked */
+        input[type=radio]:checked + label:before {
+            background-color: $sea-green;
+        }
+         
+        /* Hover */
+        label:hover:before {
+            background-color: $dark-mint;
+        }
+         
+        /* Disabled */
+        input[type=radio]:disabled + label:before {
+            filter: grayscale(100%);
+        }
+    }
+    @media (max-width: 1250px) {
+        &_right{
+            font-size: 19px;
+        }
     }
     @media (max-width: 1024px) {
         flex-direction: column; 
         &_left{
             width: 80%;
-            height: 15vh;
+            height: 150px;
         }
         &_right{
             width: 80%;
-            height: 35vh;
-            gap: 5vh;
+            font-size: 24px;
+            height: 350px;
+        }
+    }
+    @media (max-width: 780px) {
+        &_left{
+            width: 80%;
+        }
+        &_right{
+            width: 80%;
+            height: 400px;
         }
     }
     @media (max-width: 568px) {
         &_left{
             width: 90%;
-            height: 15vh;
+            height: 130px;
         }
         &_right{
             width: 90%;
-            height: 40vh;
-            gap: 4vh;
+            height: 330px;
+            font-size: 18px;
         }
     }
     @media (max-width: 380px) {
@@ -62,7 +110,7 @@
         }
         &_right{
             width: 95%;
-            height: 43vh;
+            height: 355px;
         }
     }
 }

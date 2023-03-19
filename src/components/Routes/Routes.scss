@@ -1,14 +1,32 @@
 @import '../../style/variables.scss';
 
 .routes{
-    padding-top: 150px;
     width: 100%;
-    height: 80%;
+    height: 50%;
+    max-height: 95vh;
+    overflow: auto;
+    scrollbar-width: thin;
+    scrollbar-color: $sea-green;
+    scrollbar-gutter: stable;
+    padding-top: 17vh;
+    padding-bottom: 5%;
     @media (max-width: 1024px) {
-        padding-top: 200px;
+        max-height: 90vh;
+        padding-top: 180px;
+    }
+    @media (max-width: 780px) {
+        padding-bottom: 8%;
     }
     @media (max-width: 568px) {
-        padding-top: 250px;
+    }
+    @media (max-height: 700px) {
+        padding-top: 28vh;
+    }
+    @media (max-height: 600px) {
+        padding-top: 33vh;
+    }
+    @media (max-height: 400px) {
+        padding-top: 30vh;
     }
 }
 
