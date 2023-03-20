@@ -1,5 +1,5 @@
 import * as React from 'react';
-import './chekBoxQuestion.scss';
+import './checkBoxQuestion.scss';
 
 interface IChekBoxQuestionProps {
     title: string;
@@ -14,7 +14,7 @@ interface IChekBoxQuestionProps {
     five?: boolean;
 }
 
-const ChekBoxQuestion: React.FC<IChekBoxQuestionProps> = (
+const CheckBoxQuestion: React.FC<IChekBoxQuestionProps> = (
     {
         title,
         changeAnswer1, answer1,
@@ -68,4 +68,4 @@ const ChekBoxQuestion: React.FC<IChekBoxQuestionProps> = (
   );
 };
 
-export default ChekBoxQuestion;
+export default CheckBoxQuestion;
