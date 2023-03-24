@@ -32,9 +32,19 @@ const Routes: React.FC<IRoutesProps> = (props) => {
     const [radioQuestion7, setRadioQuestion7] = useState<string>('');
     const [radioQuestion9, setRadioQuestion9] = useState<string>('');
 
-    // const [chekboxQuestion3, setCheckboxQuestion3] = useState();
-    // const [chekboxQuestion5, setCheckboxQuestion5] = useState([]);
-    let ckeckboxQuestion = {qw1: '', qw2: '', qw3: '', qw4: '', qw5: ''};
+    const [checkboxQuestion3, setCheckboxQuestion3] = useState({answer1: false, answer2: false, answer3: false, answer4: false, answer5: false});
+    const [checkboxQuestion5, setCheckboxQuestion5] = useState({answer1: false, answer2: false, answer3: false});
+
+    const handlerQuestion3: React.ChangeEventHandler<HTMLInputElement> = (e) => {
+        const { target } = e;
+        setCheckboxQuestion3( f => ({ ...f, [target.value]: target.checked }));
+    };
+
+    const handlerQuestion5: React.ChangeEventHandler<HTMLInputElement> = (e) => {
+        const { target } = e;
+        setCheckboxQuestion5( f => ({ ...f, [target.value]: target.checked }));
+    };
+
 
 
     useEffect(() => {
@@ -53,10 +63,24 @@ const Routes: React.FC<IRoutesProps> = (props) => {
             let res2 = radioQuestion2 ===  Response.question2;
             res = radioQuestion2 === '' ? result.push('Не отвечено') : res2 ? result.push('Правильно') : result.push('Не правильно');
             res = res2 ? score++ : null;
+
+            let res3 = Response.question3[0] === checkboxQuestion3.answer1 &&
+            Response.question3[1] === checkboxQuestion3.answer2 &&
+            Response.question3[2] === checkboxQuestion3.answer3 &&
+            Response.question3[3] === checkboxQuestion3.answer4 &&
+            Response.question3[4] === checkboxQuestion3.answer5;
+            res = res3 ? result.push('Правильно') : result.push('Не правильно');
+            res = res3 ? score++ : null;
     
             let res4 = textQuestion4.replace(/\s+/g, '').trim() ===  Response.question4;
             res = textQuestion4 === '' ? result.push('Не отвечено') : res4 ? result.push('Правильно') : result.push('Не правильно');
             res = res4 ? score++ : null;
+
+            let res5 = Response.question5 === checkboxQuestion5.answer1 &&
+            Response.question5 === checkboxQuestion5.answer2 &&
+            Response.question5 === checkboxQuestion5.answer3;
+            res = res5 ? result.push('Правильно') : result.push('Не правильно');
+            res = res5 ? score++ : null;
 
             let res6;
             Response.question6.forEach(element => {
@@ -83,8 +107,6 @@ const Routes: React.FC<IRoutesProps> = (props) => {
             let res10 = textQuestion10.replace(/\s+/g, '').trim() ===  Response.question10;
             res = textQuestion10 === '' ? result.push('Не отвечено') : res10 ? result.push('Правильно') : result.push('Не правильно');
             res = res10 ? score++ : null;
-            console.log('score', score);
-            console.log('result', result);
             sertResponse(result);
             setScore(score);
 
@@ -97,6 +119,9 @@ const Routes: React.FC<IRoutesProps> = (props) => {
             setRadioQuestion2('');
             setRadioQuestion7('');
             setRadioQuestion9('');
+
+            setCheckboxQuestion3({answer1: false, answer2: false, answer3: false, answer4: false, answer5: false});
+            setCheckboxQuestion5({answer1: false, answer2: false, answer3: false});
         }
     }, [lock]);
 
@@ -150,13 +175,15 @@ const Routes: React.FC<IRoutesProps> = (props) => {
                     <div className='routes'>
                         <PageTitle title='Вопрос 3' 
                         back={ROUTES.question2} forward={ROUTES.question4}/>
-                        <CheckBoxQuestion title='Какие типы данных поддерживает файл JSON? Выберите несколько вариантов ответа'
-                        answer1='Массивы' changeAnswer1={(e) => ckeckboxQuestion.qw1 = e.target.value}
-                        answer2='Функции' changeAnswer2={(e) => ckeckboxQuestion.qw2 = e.target.value}
+                        <CheckBoxQuestion title='Какие типы данных могут быть использованы в JSON?'
+                        answer1='Массивы' 
+                        changeAnswer1={handlerQuestion3} checked1={checkboxQuestion3.answer1}
+                        answer2='Функции' 
+                        changeAnswer2={handlerQuestion3} checked2={checkboxQuestion3.answer2}
                         answer3='Примитивы (число, строка, логические значения, null)' 
-                        changeAnswer3={(e) => ckeckboxQuestion.qw3 = e.target.value}
-                        changeAnswer4={(e) => ckeckboxQuestion.qw4 = e.target.value}
-                        changeAnswer5={(e) => ckeckboxQuestion.qw5 = e.target.value}
+                        changeAnswer3={handlerQuestion3} checked3={checkboxQuestion3.answer3}
+                        changeAnswer4={handlerQuestion3} checked4={checkboxQuestion3.answer4}
+                        changeAnswer5={handlerQuestion3} checked5={checkboxQuestion3.answer5}
                         five={true} />
                     </div>
                 </Route>
@@ -180,11 +207,14 @@ const Routes: React.FC<IRoutesProps> = (props) => {
                         <PageTitle title='Вопрос 5' 
                         back={ROUTES.question4} forward={ROUTES.question6}/>
                         <CheckBoxQuestion title={`Работа со строками в JavaScript. Как можно получить символ «о» из следующей переменной? \nㅤㅤlet str = \`Hello\`; `}
-                        answer1='alert ( str[str.length - 1] );' changeAnswer1={() => console.log()}
-                        answer2='alert ( str.at(-1) );' changeAnswer2={() => console.log()}
-                        answer3='alert ( str[4] );' changeAnswer3={() => console.log()}
-                        changeAnswer4={() => console.log()}
-                        changeAnswer5={() => console.log()} />
+                        answer1='alert ( str[str.length - 1] );' 
+                        changeAnswer1={handlerQuestion5} checked1={checkboxQuestion5.answer1}
+                        answer2='alert ( str.at(-1) );' 
+                        changeAnswer2={handlerQuestion5} checked2={checkboxQuestion5.answer2}
+                        answer3='alert ( str[4] );' 
+                        changeAnswer3={handlerQuestion5} checked3={checkboxQuestion5.answer3}
+                        changeAnswer4={() => console.log()} checked4={false}
+                        changeAnswer5={() => console.log()} checked5={false} />
                     </div>
                 </Route>
                 <Route exact path={ROUTES.question6}>
@@ -207,7 +237,7 @@ const Routes: React.FC<IRoutesProps> = (props) => {
                             answer1='это один из видов записи цикла'
                             changeAnswer1={(e) => setRadioQuestion7(e.target.value)}
                             checkedAnswer1={radioQuestion7 === 'answer1'}
-                            answer2='это способ сравнить выражение сразу с несколькими вариантами'
+                            answer2='это способ сравнить выражение поочерёдно с несколькими вариантами значений'
                             changeAnswer2={(e) => setRadioQuestion7(e.target.value)}
                             checkedAnswer2={radioQuestion7 === 'answer2'}
                             answer3='это одна из встроенных функций языка'

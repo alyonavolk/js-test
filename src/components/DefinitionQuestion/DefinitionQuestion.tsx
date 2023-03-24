@@ -13,7 +13,7 @@ const DefinitionQuestion: React.FC<IDefinitionQuestionProps> = ({value, onChange
     <>
     <div className='definitionQuestion'>
         <div className='definitionQuestion_left'>
-            <p>Дано из понятий из ООП, вставьте пропущенное слово.</p>
+            <p>Дано одно из понятий из ООП, вставьте пропущенное слово.</p>
         </div>
         <div className='definitionQuestion_right'>
           <p>В объектно-ориентированном программировании

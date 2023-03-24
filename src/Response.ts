@@ -6,9 +6,9 @@ export const Response = {
         "a+b<4?alert(\"Мало\"):alert(\"Много\")"
     ],
     question2: 'answer1',
-    question3: '',
+    question3: [true, false, true, true, false],
     question4: '3',
-    question5: '',
+    question5: true,
     question6: ['«usestrict»', 'usetrict'],
     question7: 'answer2',
     question8: [
