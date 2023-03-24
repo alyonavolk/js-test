@@ -54,11 +54,12 @@ const Routes: React.FC<IRoutesProps> = (props) => {
         if (lock.pathname === ROUTES.results) {
             let res: number | null;
             let res1;
+            let resCount1: number = 0;
             Response.question1.forEach(element => {
-                res1 = textQuestion1.replace(/\s+/g, '').trim() === element;
+                res1 = textQuestion1.replace(/\s+/g, '').trim() === element ? resCount1++ : null;
             });
-            res = textQuestion1 === '' ? result.push('Не отвечено') : res1 ? result.push('Правильно') : result.push('Не правильно');
-            res = res1 ? score++ : null;
+            res = textQuestion1 === '' ? result.push('Не отвечено') : resCount1 >= 1 ? result.push('Правильно') : result.push('Не правильно');
+            res = resCount1 >= 1 ? score++ : null;
             
             let res2 = radioQuestion2 ===  Response.question2;
             res = radioQuestion2 === '' ? result.push('Не отвечено') : res2 ? result.push('Правильно') : result.push('Не правильно');
@@ -94,11 +95,12 @@ const Routes: React.FC<IRoutesProps> = (props) => {
             res = res7 ? score++ : null;
 
             let res8;
+            let resCount2: number = 0;
             Response.question8.forEach(element => {
-                res8 = textQuestion8.replace(/\s+/g, '').trim() === element;
+                res8 = textQuestion8.replace(/\s+/g, '').trim() === element ? resCount2++ : null;
             });
-            res = textQuestion8 === '' ? result.push('Не отвечено') : res8 ? result.push('Правильно') : result.push('Не правильно');
-            res = res8 ? score++ : null;
+            res = textQuestion8 === '' ? result.push('Не отвечено') : resCount2 >= 1 ? result.push('Правильно') : result.push('Не правильно');
+            res = resCount2 >= 1 ? score++ : null;
 
             let res9 = radioQuestion9 ===  Response.question9;
             res = radioQuestion9 === '' ? result.push('Не отвечено') : res9 ? result.push('Правильно') : result.push('Не правильно');

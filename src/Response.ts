@@ -9,7 +9,7 @@ export const Response = {
     question3: [true, false, true, true, false],
     question4: '3',
     question5: true,
-    question6: ['«usestrict»', 'usetrict'],
+    question6: ['«usestrict»', 'usestrict'],
     question7: 'answer2',
     question8: [
     'functionmin(a,b){returna<b?a:b;}',
