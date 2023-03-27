@@ -13,10 +13,7 @@ import DefinitionQuestion from '../DefinitionQuestion/DefinitionQuestion';
 import CheckBoxQuestion from '../CheckBoxQuestion/CheckBoxQuestion';
 import Result from '../Result/Result';
 
-interface IRoutesProps {
-}
-
-const Routes: React.FC<IRoutesProps> = (props) => {
+const Routes: React.FC = () => {
     const lock = useLocation();
 
     const [score, setScore] = useState<number>(0);
@@ -50,13 +47,14 @@ const Routes: React.FC<IRoutesProps> = (props) => {
     useEffect(() => {
         const result: string[] = [];
         let score:number = 0; 
+        console.log(textQuestion8.replace(/\s+/g, '').replace(';', '').trim());
 
         if (lock.pathname === ROUTES.results) {
             let res: number | null;
             let res1;
             let resCount1: number = 0;
             Response.question1.forEach(element => {
-                res1 = textQuestion1.replace(/\s+/g, '').trim() === element ? resCount1++ : null;
+                res1 = textQuestion1.replace(/\s+/g, '').replace(';', '').trim() === element ? resCount1++ : null;
             });
             res = textQuestion1 === '' ? result.push('Не отвечено') : resCount1 >= 1 ? result.push('Правильно') : result.push('Не правильно');
             res = resCount1 >= 1 ? score++ : null;
@@ -97,7 +95,7 @@ const Routes: React.FC<IRoutesProps> = (props) => {
             let res8;
             let resCount2: number = 0;
             Response.question8.forEach(element => {
-                res8 = textQuestion8.replace(/\s+/g, '').trim() === element ? resCount2++ : null;
+                res8 = textQuestion8.replace(/\s+/g, '').replace(';', '').trim() === element ? resCount2++ : null;
             });
             res = textQuestion8 === '' ? result.push('Не отвечено') : resCount2 >= 1 ? result.push('Правильно') : result.push('Не правильно');
             res = resCount2 >= 1 ? score++ : null;

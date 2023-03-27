@@ -52,17 +52,14 @@
             border-radius: 100%;
         }
          
-        /* Checked */
         input[type=radio]:checked + label:before {
-            background-color: $sea-green;
+            background-color: $darkmouth-green;
         }
          
-        /* Hover */
         label:hover:before {
             background-color: $dark-mint;
         }
          
-        /* Disabled */
         input[type=radio]:disabled + label:before {
             filter: grayscale(100%);
         }

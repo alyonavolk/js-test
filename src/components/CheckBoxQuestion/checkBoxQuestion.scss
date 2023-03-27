@@ -62,7 +62,7 @@
             content: "";
             position: absolute;
             left: 2px;
-            top: 25%;
+            top: 9px;
             width: 10px;
             height: 5px;
             border-radius: 1px;
@@ -76,17 +76,14 @@
 
         }
          
-        /* Checked */
         input[type=checkbox]:checked + label:before {
             background-color: $sea-green;
         }
          
-        /* Hover */
         label:hover:before {
             background-color: $dark-mint;
         }
-         
-        /* Disabled */
+        
         input[type=checkbox]:disabled + label:before {
             filter: grayscale(100%);
         }
@@ -115,6 +112,11 @@
         &_right{
             width: 90%;
             height: 250px;
+        }
+        &__btn{
+            input[type=checkbox]:checked + label:after{
+                top: 3px;
+            }
         }
     }
     @media (max-width: 380px) {
